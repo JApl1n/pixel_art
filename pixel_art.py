@@ -81,7 +81,54 @@ def define_butterfly():
     
     return image_mat
 
+def define_red_butterfly():
+    import numpy as np
 
+    # make an empty numpy array for storing the image
+    image_mat = np.full((16, 16, 3), 1.0)
+
+    # define some colours
+    black = [0, 0, 0]
+    red = [0.8, 0.2, 0.2]
+    orange = [1.0, 0.6, 0.0]
+
+    # specify which pixels are which colour
+    c = 8
+    # centre of butterfly
+    image_mat[2:13, c] = black
+    
+    # generate mirror image at the same time
+    for i in [-1, 1]:
+        # outline
+        image_mat[1, i*1+c] = black
+        image_mat[0, i*2+c] = black
+        image_mat[4, i*1+c] = black
+        image_mat[3, [i*j+c for j in [2, 3]]] = black
+        image_mat[2, [i*j+c for j in [4, 5]]] = black
+        image_mat[3, i*6+c] = black
+        image_mat[4:7, i*7+c] = black
+        image_mat[7, [i*j+c for j in [6, 5]]] = black
+        image_mat[8, [i*j+c for j in [4, 3, 2]]] = black
+        image_mat[7, i*1+c] = black
+        image_mat[9, i*5+c] = black
+        image_mat[10:12, i*6+c] = black
+        image_mat[12, i*5+c] = black
+        image_mat[13, [i*j+c for j in [4, 3]]] = black
+        image_mat[12, i*2+c] = black
+        image_mat[11, i*1+c] = black
+        
+        # fill in the centre line by line
+        image_mat[3, [i*j+c for j in [4, 5]]] = red
+        image_mat[4, [i*j+c for j in range(2,7)]] = red
+        image_mat[5:7, [i*j+c for j in range(1,7)]] = red
+        image_mat[7, [i*j+c for j in range(2,5)]] = red
+        image_mat[8, i*1+c] = orange
+        image_mat[9, [i*j+c for j in range(1,5)]] = red
+        image_mat[10, [i*j+c for j in range(1,6)]] = red
+        image_mat[11, [i*j+c for j in range(2,6)]] = orange
+        image_mat[12, [i*j+c for j in range(3,5)]] = red
+    
+    return image_mat
 
 def plot_image(image):
     import matplotlib.pyplot as plt
