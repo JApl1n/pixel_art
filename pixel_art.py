@@ -8,6 +8,7 @@ def define_bee():
     black = [0, 0, 0]
     yellow = [1.0, 0.85, 0]
     grey = [0.65] * 3
+    white = [1,1,1]
 
     # specify which pixels are which colour
     image_mat[7:11, 2] = black
@@ -16,9 +17,9 @@ def define_bee():
     image_mat[6:12, 7:9] = black
     image_mat[6:12, 9:11] = yellow
     image_mat[6:12, 11:13] = black
-    image_mat[7:11, 13] = black
-    image_mat[4:6, 5:11] = grey
-    image_mat[3, 6:10] = grey
+    image_mat[7:11, 13] = white
+    image_mat[4:6, 5:11] = white
+    image_mat[3, 6:10] = white
     
     return image_mat
     
@@ -78,6 +79,7 @@ def plot_image(image):
     plt.axis('off')
     plt.imshow(image)
     plt.show()
+    plt.savefig("bee.png")
     
     
 bee = define_bee()
