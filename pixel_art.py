@@ -2,21 +2,22 @@ def define_bee():
     import numpy as np
 
     # make an empty numpy array for storing the image
-    image_mat = np.full((16, 16, 3), 1.0)
+    image_mat = np.full((16, 16, 3), 0.0)
 
     # define some colours
     black = [0, 0, 0]
     yellow = [1.0, 0.85, 0]
-    grey = [0.65] * 3
+    grey = [0.35] * 3
+    white = [1,1,1]
 
     # specify which pixels are which colour
-    image_mat[7:11, 2] = black
-    image_mat[6:12, 3:5] = black
+    image_mat[7:11, 2] = white
+    image_mat[6:12, 3:5] = white
     image_mat[6:12, 5:7] = yellow
     image_mat[6:12, 7:9] = black
     image_mat[6:12, 9:11] = yellow
-    image_mat[6:12, 11:13] = black
-    image_mat[7:11, 13] = black
+    image_mat[6:12, 11:13] = white
+    image_mat[7:11, 13] = white
     image_mat[4:6, 5:11] = grey
     image_mat[3, 6:10] = grey
     
@@ -31,6 +32,7 @@ def define_butterfly():
     # define some colours
     black = [0, 0, 0]
     blue = [0.2, 0.4, 0.8]
+    red = [1,0,0]
 
     # specify which pixels are which colour
     c = 8
@@ -58,10 +60,10 @@ def define_butterfly():
         image_mat[11, i*1+c] = black
         
         # fill in the centre line by line
-        image_mat[3, [i*j+c for j in [4, 5]]] = blue
-        image_mat[4, [i*j+c for j in range(2,7)]] = blue
-        image_mat[5:7, [i*j+c for j in range(1,7)]] = blue
-        image_mat[7, [i*j+c for j in range(2,5)]] = blue
+        image_mat[3, [i*j+c for j in [4, 5]]] = red
+        image_mat[4, [i*j+c for j in range(2,7)]] = red
+        image_mat[5:7, [i*j+c for j in range(1,7)]] = red
+        image_mat[7, [i*j+c for j in range(2,5)]] = red
         image_mat[8, i*1+c] = blue
         image_mat[9, [i*j+c for j in range(1,5)]] = blue
         image_mat[10, [i*j+c for j in range(1,6)]] = blue
