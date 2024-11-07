@@ -8,18 +8,27 @@ def define_bee():
     black = [0, 0, 0]
     yellow = [1.0, 0.85, 0]
     grey = [0.35] * 3
-    white = [1,1,1]
+    
+    orange2 = [1, 0.9, 0.6]
+    green = [0.1, 0.5, 0]
 
     # specify which pixels are which colour
-    image_mat[7:11, 2] = white
-    image_mat[6:12, 3:5] = white
-    image_mat[6:12, 5:7] = yellow
-    image_mat[6:12, 7:9] = black
-    image_mat[6:12, 9:11] = yellow
-    image_mat[6:12, 11:13] = white
-    image_mat[7:11, 13] = white
-    image_mat[4:6, 5:11] = grey
-    image_mat[3, 6:10] = grey
+    image_mat[7:11, 2] = green
+    image_mat[6:12, 3:5] = green
+    image_mat[6:12, 5:7] = green
+    image_mat[6:12, 7:9] = green
+    image_mat[6:12, 9:11] = green
+    image_mat[6:12, 11:13] = green
+    image_mat[7:11, 13] = green
+    
+    image_mat[4:6, 5:11] = orange2
+    image_mat[3, 6:10] = orange2
+    
+    image_mat[8:11, 2] = orange2
+    image_mat[8:11, 13] = orange2
+    
+    image_mat[4, 6] = black
+    image_mat[4, 9] = black
     
     return image_mat
     
