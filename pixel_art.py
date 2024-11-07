@@ -64,11 +64,11 @@ def define_butterfly():
         image_mat[4, [i*j+c for j in range(2,7)]] = red
         image_mat[5:7, [i*j+c for j in range(1,7)]] = red
         image_mat[7, [i*j+c for j in range(2,5)]] = red
-        image_mat[8, i*1+c] = red
-        image_mat[9, [i*j+c for j in range(1,5)]] = red
-        image_mat[10, [i*j+c for j in range(1,6)]] = red
-        image_mat[11, [i*j+c for j in range(2,6)]] = red
-        image_mat[12, [i*j+c for j in range(3,5)]] = red
+        image_mat[8, i*1+c] = blue
+        image_mat[9, [i*j+c for j in range(1,5)]] = blue
+        image_mat[10, [i*j+c for j in range(1,6)]] = blue
+        image_mat[11, [i*j+c for j in range(2,6)]] = blue
+        image_mat[12, [i*j+c for j in range(3,5)]] = blue
     
     return image_mat
 
