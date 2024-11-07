@@ -7,7 +7,7 @@ def define_bee():
     # define some colours
     black = [0, 0, 0]
     yellow = [1.0, 0.85, 0]
-    grey = [0.65] * 3
+    grey = [0.35] * 3
     white = [1,1,1]
 
     # specify which pixels are which colour
